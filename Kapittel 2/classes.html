@@ -1,0 +1,87 @@
+<html>
+  <body>
+    <script src="uml.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Bandasje {
+            bruk(spiller)
+          }
+          class Drage {
+            ild_pust
+            bruk_ild_pust(spiller)
+          }
+          class GiftKniv {
+            giftSkade : int
+            giftVarighet : int
+            førsteStikk(monster)
+            påførGiftSkade(monster)
+          }
+          class Hagle {
+            skyt(monstre)
+          }
+          class HelseGjenstand {
+            helbredelse
+            navn
+            bruk(spiller)
+          }
+          class LangSverd {
+            Antallslag : int
+            slag(monster)
+          }
+          class Medkit {
+            bruk(spiller)
+          }
+          class Monster {
+            forgiftet : bool
+            giftSkade : int
+            giftVarighet : int
+            helse
+            navn
+            skade : int
+            angrep(spiller)
+            død()
+            håndterGift()
+            sjekkHelse()
+          }
+          class Pistol {
+            skyt(monster)
+          }
+          class Spiller {
+            helse
+            navn
+            ryggsekk : list
+            våpen : NoneType
+            angrep(monster)
+            bruk_item(item)
+            død()
+            sjekkHelse()
+          }
+          class Troll {
+            helse
+            helseRegenerering : int
+            regenerer()
+          }
+          class Vampyr {
+            livstapp_skade : int
+            livstapp_varighet : int
+            angrep(spiller)
+            livstapp(spiller)
+          }
+          class Våpen {
+            navn
+            skade
+          }
+          Bandasje --|> HelseGjenstand
+          Drage --|> Monster
+          GiftKniv --|> Våpen
+          Hagle --|> Våpen
+          LangSverd --|> Våpen
+          Medkit --|> HelseGjenstand
+          Pistol --|> Våpen
+          Troll --|> Monster
+          Vampyr --|> Monster
+  
+       </div>
+  </body>
+</html>

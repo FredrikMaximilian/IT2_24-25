@@ -1,0 +1,19 @@
+
+class Appelsin:
+    # klassevariabler
+    farge = "oransje"
+    smak = "god"
+    vekt = "høy"
+ 
+    def __init__(self, produsent: str = "BAMA", land = "Spania", vekt = 100):
+        #
+ 
+        self.produsent = produsent
+ 
+ 
+Harald_sin_Appelsin = Appelsin() #
+ 
+print(Harald_sin_Appelsin.farge)
+print(Harald_sin_Appelsin.produsent)
+print(Harald_sin_Appelsin.smak)
+print(Harald_sin_Appelsin.vekt)
