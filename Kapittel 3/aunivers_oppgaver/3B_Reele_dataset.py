@@ -41,8 +41,8 @@ with open(rektangelfil) as fil:
 
 for rektangel in rektangler:
     print(rektangel.areal())
-"""
-#Oppgave 3
+""""""
+#Oppgave 4
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -62,3 +62,23 @@ with open(valgfil) as fil:
 
 plt.plot(årliste, deltagelseliste)
 plt.show()
+"""
+#Oppgave 5
+"""
+tallfil = "tall.txt"
+with open(tallfil) as fil:
+    for linje in fil:
+        info = linje.rstrip().split("-")
+        talliste = [int(tall) for tall in info]
+        total = sum(talliste)
+        gjennomsnitt = total/len(talliste)
+        tall_streng = " ".join(map(str, talliste))
+        print(f'tall = {tall_streng}, total = {total}, gjennomsnitt = {gjennomsnitt}')
+"""
+#Oppgave 6
+while True:
+    tekst = str(input("Skriv tekst: "))
+    filnavn = "oppgave_6_tekstfil.txt"
+
+    with open(filnavn, "a") as fil:
+        fil.write(tekst + "\n")
