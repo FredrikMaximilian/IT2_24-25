@@ -8,11 +8,12 @@ def areal(x):
 
 delta_x = 1E-8
 
-def der_areal(x):
+def der_areal(x): #
     return (areal(x+delta_x)-areal(x))/delta_x 
 
 x = 0
 h = 0.01
+
 while der_areal(x+h) > 0: 
     x = x + h
 

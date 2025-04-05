@@ -1,37 +1,17 @@
-'''
-from pylab import *
+import math # Importerer sqrt funksjonen fra math biblioteket
 
-delta_x = 1E-8
+def f(x):  # Definerer funksjonen vi vil derivere
+    return (math.e)**(2*x) # Returnerer funksjonsverdien
 
-def f(x):
-    return x**2 + 2*x
+def numerisk_derivert(a, delta_x):  # Definerer funksjonen for numerisk derivasjon
+    return (f(a + delta_x) - f(a - delta_x)) / (2*delta_x)  # Beregner den numeriske deriverte
 
-def derivert(a):
-    return (f(a + delta_x) - f(a)) / delta_x
+def eksakt_derivert(x):  # Definerer funksjonen for eksakt derivasjon
+    return 2*(math.e)**(2*x)  # Returnerer den eksakte deriverte
 
-x_verdier = linspace(- 5, 5, 100)
-y_verdier = f(x_verdier)
-dy_verdier = derivert(x_verdier)
+print("f’(2) =", numerisk_derivert(2, 1E-8))  # Skriver ut den numeriske deriverte for x=2 med delta_x=1E-8
+print(eksakt_derivert(2))  # Skriver ut den eksakte deriverte for x=2
+print((eksakt_derivert(2)) - (numerisk_derivert(2, 1E-8)))  # Skriver ut differansen mellom eksakt og numerisk deriverte for x=2
 
-plot(x_verdier, y_verdier)
-plot(x_verdier, dy_verdier)
-show()
-'''
-from math import sqrt
-def f(x):	 	 	 	 	 	 # funksjonen vi vil derivere
- 	 return x**3 + 2*x - 7
-
-def numerisk_derivert(a, delta_x):  		 # numerisk derivasjon i a
-    return (f(a + delta_x) - f(a - delta_x)) / (2*delta_x)
-
-def eksakt_derivert(x):
-       return 3*x**2+2
-
-
-print("f’(2) =", numerisk_derivert(2, 1E-8))
-print(eksakt_derivert(2))
-print((eksakt_derivert(2))-(numerisk_derivert(2, 1E-8)))
-'''
-for i in range(1, 17):
-   print("f’(2) =", derivert(2, 10**(-i)))
-'''
+for i in range(1, 17):  # Løkke som går fra 1 til 16
+    print("f’(2) =", numerisk_derivert(3, 10**(-i)))  # Skriver ut den numeriske deriverte for x=2 med forskjellige delta_x verdier

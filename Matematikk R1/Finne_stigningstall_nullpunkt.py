@@ -2,7 +2,7 @@ from pylab import *
 import math as m
 
 def f(x):
-  return m.e**(2*x)-3*m.e**x-m.e
+  return m.e**(2*x)
 
 x = linspace(-5, 7, 1000)
 y = f(x)

@@ -1,7 +1,10 @@
-#Gå inn på FredrikWatch.py for å starte å spille
+#Åpne FredrikWatch.py og start spillet
 
 ##**Hvilke bibloteker som må importeres**
-Det er ingen bibloteker som må lastes ned for å bruke spillet. 
+####**Biblotek**
+For å bruke Spill-Bibloteket trenger man å importere _time_-bibloteket som _import time_
+####**Spill**
+For å bruke spillet må du først importere spill-bibloteket _FredrikWatchBiblotek_ som _from FredrikWatchBiblotek import *_. Du må i tillegg importere funksjonen __Skriv_ut_tekst__ som __from FredrikWatchBiblotek import skriv_ut_tekst as s__. 
 
 ##**Forklare spillets funksjoner**
 I spillet spiller hovedkarakteren mot monstre, en av gangen. Det er tre forskjellige monstre, med forskjellige egenskaper. I tillegg har karakteren flere muligheter også. 

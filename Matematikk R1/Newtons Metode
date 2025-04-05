@@ -1,43 +1,61 @@
-from pylab import *
-import math as m
+from pylab import *  # Importerer alle funksjoner fra pylab
+import math as m  # Importerer math biblioteket som m
 
 def f(x):
-  return m.e**(2*x)-3*m.e**x-m.e
+  return (x**2)+(2*x)-1 # Definerer funksjonen f(x)
 
-x = linspace(-5, 7, 1000)
-y = f(x)
+x = linspace(-5, 7, 1000)  # Lager en liste med 1000 verdier fra -5 til 7
+y = f(x)  # Beregner funksjonsverdiene for x
 
-plot(x, y, color = "b")
-ylim(-20, 40)
-axhline(y = 0, color = "k")
-axvline(x = 0, color = "k")
-xlabel("x")
-ylabel("y")
-grid()
-show()
+plot(x, y, color = "b")  # Plotter funksjonen med blå farge
+ylim(-20, 40)  # Setter y-aksen begrensninger
+axhline(y = 0, color = "k")  # Tegner en horisontal linje ved y=0
+axvline(x = 0, color = "k")  # Tegner en vertikal linje ved x=0
+xlabel("x")  # Setter x-aksen etikett
+ylabel("y")  # Setter y-aksen etikett
+grid()  # Viser rutenett
+show()  # Viser plottet
 
-x1 = float(input("Skriv inn en x-verdi nær nullpunktet: "))
-delta_x = 0.00001
+x1 = float(input("Skriv inn en x-verdi nær nullpunktet: "))  # Ber brukeren om å skrive inn en x-verdi
+delta_x = 0.00001  # Setter en liten verdi for delta_x
 
 def f_derivert(a):
-  return (f(a + delta_x) - f(a)) / delta_x
+  return (f(a + delta_x) - f(a)) / delta_x  # Beregner den numeriske deriverte
 
 def ny_x_verdi(x1):
-  return x1 - (f(x1) / f_derivert(x1))
+  return x1 - (f(x1) / f_derivert(x1))  # Beregner ny x-verdi ved hjelp av Newtons metode
 
-for i in range(10):
-  x2 = ny_x_verdi(x1)
-  print("Et bedre forslag er gitt ved x =", round(x2, 4))
-  x1 = x2
+for i in range(10):  # Gjentar 10 ganger
+  x2 = ny_x_verdi(x1)  # Beregner ny x-verdi
+  # print("Et bedre forslag er gitt ved x =", round(x2, 4))  # Skriver ut ny x-verdi
+  x1 = x2  # Oppdaterer x1
 
-print("Med x =", x1, " er f(x) =", f(x1))
+print(f'Med x = {x1:.5f}, er f(x) = {f(x1)}')  # Skriver ut den endelige x-verdien og funksjonsverdien
 
-flyttall_løsning = x1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+flyttall_løsning = x1  # Lagrer løsningen som flyttall
 
 # Finn det største heltallet x0 som oppfyller ulikheten
 x0 = int(flyttall_løsning)  # Konverter løsningen til heltall
 while f(x0) >= 0:  # Sørg for at ulikheten er oppfylt
     x0 -= 1  # Gå bakover til ulikheten er sann
 
-#Må legge inn ulikheten i funksjonen for å finne dette
-print("Det største heltallet x0 slik at e^x0 + 2*x0 < 100 er:", x0)
+# Må legge inn ulikheten i funksjonen for å finne dette
+print("Det største heltallet x0 slik at e^x0 + 2*x0 < 100 er:", x0)  # Skriver ut det største heltallet som oppfyller ulikheten
+"""

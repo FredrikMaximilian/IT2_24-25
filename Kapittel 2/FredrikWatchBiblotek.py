@@ -1,5 +1,3 @@
-
-#FredrikWatchBiblotek.py
 # Spill_bibliotek.py
 import time
 
