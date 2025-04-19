@@ -174,7 +174,7 @@ ax.grid(axis="x")  # Legger til rutenett (bare vertikale linjer)
 plt.show()         # Viser diagrammet
 """
 #Oppgave 12
-"""
+
 år = [1985, 1989, 1993, 1997, 2001, 2005, 2009, 2013, 2017, 2021]
 arbeiderpartiet = [71, 63, 67, 65, 43, 61, 64, 55, 49, 48]
 høyre = [50, 37, 28, 23, 38, 38, 41, 48, 45, 36]
@@ -188,7 +188,7 @@ ax.set_xticks(x, år)
 ax.legend()
 ax.grid(axis = "x")
 plt.show()
-"""
+
 
 #Oppgave 13
 """
@@ -281,7 +281,7 @@ plt.legend()
 plt.grid()
 plt.tight_layout()
 plt.show()"""
-
+"""
 #Sluttoppgave 2
 import random as rd
 from collections import Counter
@@ -299,4 +299,4 @@ plt.bar(tall, antall, color = "pink", edgecolor = "black")
 plt.xlabel("Øyne")
 plt.ylabel("Antall")
 plt.grid(axis = "y")
-plt.show()
+plt.show()"""

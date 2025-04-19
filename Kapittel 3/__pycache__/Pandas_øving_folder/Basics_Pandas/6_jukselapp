@@ -1,0 +1,80 @@
+import pandas as pd
+
+# -------------------------------
+# 📊 Eksempeldata (lages i koden)
+# -------------------------------
+data = {
+    "Navn": ["Anna", "Bjørn", "Clara", "David", "Ella"],
+    "Alder": [23, 35, 29, 42, 19],
+    "By": ["Oslo", "Bergen", "Trondheim", "Oslo", "Bergen"],
+    "Poeng": [88, 92, 79, 85, 90]
+}
+
+df = pd.DataFrame(data)
+
+# -------------------------------------
+# 🔍 Utforskning og visning av data
+# -------------------------------------
+print(df.head())           # Viser de første 5 radene
+print(df.tail(2))          # Viser de siste 2 radene
+print(df.shape)            # Antall rader og kolonner
+print(df.info())           # Informasjon om kolonner, datatype, null-verdier
+print(df.describe())       # Statistikk for numeriske kolonner
+print(df.columns)          # Liste over kolonnenavn
+print(df.dtypes)           # Datatyper for hver kolonne
+
+# -------------------------------------
+# 🔧 Filtrering og utvalg
+# -------------------------------------
+print(df["Navn"])                          # Én kolonne
+print(df[["Navn", "Poeng"]])               # Flere kolonner
+print(df[df["Alder"] > 30])                # Filter: alder over 30
+print(df[df["By"] == "Oslo"])              # Filter: bor i Oslo
+print(df[(df["By"] == "Oslo") & (df["Poeng"] > 80)])  # Kombinert filter
+
+# -------------------------------------
+# 🆕 Legge til og endre kolonner
+# -------------------------------------
+df["Bonus"] = df["Poeng"] * 0.1            # Ny kolonne med beregnet verdi
+df["Navn_upper"] = df["Navn"].str.upper()  # Endre tekstverdier
+
+# -------------------------------------
+# 🗃️ Sortering
+# -------------------------------------
+print(df.sort_values("Alder"))             # Sorter etter alder stigende
+print(df.sort_values("Poeng", ascending=False))  # Sorter etter poeng synkende
+
+# -------------------------------------
+# 🔢 Gruppering og aggregering
+# -------------------------------------
+print(df.groupby("By").mean())             # Gjennomsnitt per by
+print(df.groupby("By")["Poeng"].sum())     # Summer poeng per by
+print(df.groupby("By").agg({"Poeng": ["mean", "max"], "Alder": "median"}))  # Flere aggregat
+
+# -------------------------------------
+# 🎯 Endre rader eller kolonner
+# -------------------------------------
+print(df.iloc[1])          # Andre rad (0-indeks)
+print(df.loc[2, "Navn"])   # Navn i rad 3
+df.at[2, "Poeng"] = 95     # Endre verdi direkte
+
+# -------------------------------------
+# 🔍 Finne og fjerne
+# -------------------------------------
+print(df.isnull())         # Sjekk for manglende verdier
+df.drop("Navn_upper", axis=1, inplace=True)   # Fjern én kolonne
+df.dropna()                # Fjern rader med manglende verdier (hvis noen)
+df.fillna(0)               # Fyll manglende verdier med 0
+
+# -------------------------------------
+# 💾 Lagre og lese data
+# -------------------------------------
+df.to_csv("mitt_datasett.csv", index=False)       # Lagre til CSV
+ny_df = pd.read_csv("mitt_datasett.csv")          # Les fra CSV
+
+# -------------------------------------
+# 🧹 Andre nyttige ting
+# -------------------------------------
+print(df["By"].unique())         # Unike verdier i kolonnen "By"
+print(df["By"].value_counts())   # Antall forekomster av hver verdi
+print(df.rename(columns={"Poeng": "Score"}))  # Endre kolonnenavn

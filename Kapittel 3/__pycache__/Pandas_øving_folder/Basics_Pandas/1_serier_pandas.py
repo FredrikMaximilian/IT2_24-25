@@ -15,7 +15,7 @@ myvar = pd.Series(a, index = ["x", "y", "z"]) #Kan lage egne labels
 print(myvar)
 print(myvar["y"]) #Retunerer items med nylaget label  
 
-"""
+
 ###Ordbok, nøkkel/verdier for å lage Series
 calories = {"day1": 420, "day2": 380, "day3": 390}
 myvar = pd.Series(calories)
@@ -23,4 +23,4 @@ print(myvar) #Nøkler i ordbok blir labels
 
 spesifisert = pd.Series(calories, index = ["day1", "day2"]) #Kan bruke index til å spesifisere ønskede items
 print(spesifisert) #Printer kun spesifisert
-"""
+
