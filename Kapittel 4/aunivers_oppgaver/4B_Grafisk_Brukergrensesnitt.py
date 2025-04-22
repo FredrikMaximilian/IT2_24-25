@@ -478,6 +478,14 @@ class Rute:
     # Tegner på en kantlinje rundt ruten
     pg.draw.rect(vindu, GRAA, (self.rad*RUTE_STR, self.kolonne*RUTE_STR, RUTE_STR, RUTE_STR), width=1)
 
+def tilfeldig_start():
+  for i in range(ANTALL_RUTER):
+    for j in range(ANTALL_RUTER):
+      rutenett.ruter[i][j].levende = False  # Nullstill først
+      tilfeldig = np.random.randint(0, 3)
+      if tilfeldig == 1:
+        rutenett.ruter[i][j].byttTilstand()
+
 # Funksjon som håndterer museklikk
 def museklikk(posisjon):
   xkoordinat = posisjon[0]
@@ -496,8 +504,10 @@ def museklikk(posisjon):
           for i in range(ANTALL_RUTER):
             for j in range(ANTALL_RUTER):
               rutenett.ruter[i][j].levende = False
-        if m.tekst == "Neste":  
+        elif m.tekst == "Neste":  
           rutenett.oppdater()
+        elif m.tekst == "Tilfeldig start":
+          tilfeldig_start()
 
 meny = [] # liste med knapper
 
@@ -506,6 +516,7 @@ meny.append(Knapp(MENY_XSTART + 20, MENY_YSTART, "Omstart"))
 
 # Lager en nesteknapp
 meny.append(Knapp(MENY_XSTART + 20, MENY_YSTART + MENY_YAVSTAND, "Neste"))
+meny.append(Knapp(MENY_XSTART + 20, MENY_YSTART + 2*MENY_YAVSTAND, "Tilfeldig start"))
 
 # Lager et rutenett
 rutenett = Rutenett()

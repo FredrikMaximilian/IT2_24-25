@@ -129,4 +129,4 @@ while True:  # Evig løkke for simuleringen
     vindu.blit(dagstekst, (10, 10))  # Tegner teksten på vinduet
 
     pg.display.flip()  # Oppdaterer skjermen
-    klokke.tick(1)  # Setter oppdateringsfrekvensen til 1 oppdatering per sekund
+    klokke.tick(2)  # Setter oppdateringsfrekvensen til 1 oppdatering per sekund
