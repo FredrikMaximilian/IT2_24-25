@@ -1,0 +1,29 @@
+#Har også laget UML-diagram for hånd. Se word-dokument
+
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Dagsinfo {
+            målerID : str
+            målinger : list
+            antallMålinger() int
+            hentDagens()
+            hentTotal() float
+            leggTilMåling(nedbør: float) None
+          }
+          class Temperaturmåler {
+            målerID : str
+            målinger : list
+            antallMålinger() int
+            hentGjennomsnitt() float
+            hentMaks() float
+            hentMin() float
+            leggTilMåling(temp: float) None
+          }
+  
+       </div>
+  </body>
+</html>
