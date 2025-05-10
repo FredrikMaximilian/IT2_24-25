@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Dagbok {
+            antall_turer()
+            registrer(km, hm)
+            snitt_hoydemeter()
+            total_km()
+          }
+          class Entur {
+            get_avstand()
+            get_dato()
+            get_hoydemeter()
+            set_avstand(km)
+            set_hoydemeter(hm)
+          }
+  
+          Dagbok *-- Entur
+       </div>
+  </body>
+</html>

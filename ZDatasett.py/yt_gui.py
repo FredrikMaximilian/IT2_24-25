@@ -60,9 +60,9 @@ def vis_graf():
     ].dropna(subset=["Youtuber", valgt_måling])
 
     print("Antall rader etter filtrering:", filtrert.shape[0])
-    print("Unike Youtubere:", filtrert["Youtuber"].nunique())
+    print("Unike Youtubere:", filtrert["Youtuber"].nunique()) 
 
-    if filtrert.empty or filtrert["Youtuber"].nunique() == 0:
+    if filtrert.empty or filtrert["Youtuber"].nunique() == 0: #Nunique betyr antall
         print("Fant ingen passende data.")
         return
 

@@ -25,7 +25,7 @@ print(f'Tabell: {underlik20202025}')
 år2025 = df[df["År"] == 2025].sort_values(by="Innvandrere og norskfødte med innvandrerforeldre", ascending= False) #Lager sortert liste med år
 
 landliste2025 = []
-infoliste2025 = []
+infoliste2025 = []  
 #Legger til land/info i respektive lister
 for land in år2025["Landbakgrunn"]:
     landliste2025.append(land) 
