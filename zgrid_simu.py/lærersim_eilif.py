@@ -120,7 +120,7 @@ class Klasserom:
         """
         Metode for å oppdatere kunnskapsnivået til elevene
         """
-        for i in range(self.rader):
+        for i in range(self.rader): 
             for j in range(self.kolonner):
                 plass = self.rom[j][i]
                 if plass.bordplass: 

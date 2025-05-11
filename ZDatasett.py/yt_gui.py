@@ -6,7 +6,7 @@ from pg_meny_scroll import Knapp, Nedtrekksliste
 from pg_meny_scroll import MENYFARGE, HOVERFARGE
 
 # --- Last inn og rens data ---
-filnavn = "yt_statistikk.csv"
+filnavn = "zyt_statistikk.csv"
 df = pd.read_csv(filnavn)
 
 # Rens opp tekst

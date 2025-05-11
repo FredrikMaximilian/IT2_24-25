@@ -11,7 +11,7 @@ import pandas as pd  # Importerer pandas-biblioteket for databehandling
 #9. Hvilken app har minste størrelse (Size)?
 #10. Hvor mange apper har "Teen" som Content Rating?
 
-filnavn = "googleplaystore.csv"
+filnavn = "zgoogleplaystore.csv"
 df = pd.read_csv(filnavn)
 
 #1

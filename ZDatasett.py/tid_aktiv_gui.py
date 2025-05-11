@@ -46,7 +46,7 @@ class Nedtrekksliste:
             self.åpen = False
 
 # === Last inn og klargjør data ===
-filnavn = "tid_på_aktiviteter.csv"
+filnavn = "ztid_på_aktiviteter.csv"
 df = pd.read_csv(filnavn, sep=";", encoding="utf-8", skiprows=1)
 df.columns = ["Aktivitet", "Kjønn", "Tidsbruk"]
 df["Aktivitet"] = df["Aktivitet"].str.replace("�", "ø").str.replace(r"^ø\s*", "", regex=True).str.strip()

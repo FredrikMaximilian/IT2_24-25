@@ -1,7 +1,7 @@
 import pandas as pd  # Importerer pandas-biblioteket for databehandling
 
 # Last inn data
-df = pd.read_csv("googleplaystore.csv")  # Leser inn data fra CSV-filen "googleplaystore.csv" til en DataFrame
+df = pd.read_csv("zgoogleplaystore.csv")  # Leser inn data fra CSV-filen "googleplaystore.csv" til en DataFrame
 
 # Fjern rader med manglende verdier i nødvendige kolonner
 df = df.dropna(subset=["Category", "Rating", "Installs"])  # Fjerner rader der "Category", "Rating" eller "Installs" har manglende verdier

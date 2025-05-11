@@ -6,7 +6,7 @@ from pg_meny_scroll import MENYFARGE, HOVERFARGE  # Importerer fargekonstanter
 import pandas as pd
 
 
-filnavn = "googleplaystore.csv"  # Navn på CSV-filen som inneholder data
+filnavn = "zgoogleplaystore.csv"  # Navn på CSV-filen som inneholder data
 df = pd.read_csv(filnavn)
 kategoriliste = sorted((df["Category"].dropna().unique()))
 #df["Rating"] = pd.to_numeric(df["Rating"], errors="coerce")

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 class Entur:
-    def __init__(self, dato, avstand: float, hoydemeter: int):
+    def __init__(self, dato: str, avstand: float, hoydemeter: int):
         self._dato = dato
         self.set_avstand(avstand)
         self.set_hoydemeter(hoydemeter)
@@ -24,6 +24,8 @@ class Entur:
         if hm < 0:
             raise ValueError("Høydemeter kan ikke være negativt")
         self._hoydemeter = hm
+
+
 
 class Dagbok:
     def __init__(self):

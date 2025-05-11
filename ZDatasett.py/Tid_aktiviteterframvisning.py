@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-filnavn = "tid_på_aktiviteter.csv"
+filnavn = "ztid_på_aktiviteter.csv"
 
 df = pd.read_csv(filnavn, sep=";", encoding="utf-8", skiprows=1)
 

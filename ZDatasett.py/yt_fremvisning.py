@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-filnavn = "yt_statistikk.csv"
+filnavn = "zyt_statistikk.csv"
 df = pd.read_csv(filnavn, sep=",", encoding="utf-8", skiprows=0)
 
 #Print alle landene
